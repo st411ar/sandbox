@@ -6,7 +6,9 @@ namespace DependencyInversionPrinciple
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var musicalInstrument = Friend.GiveInstrument();
+
+            musicalInstrument.GetSound();
         }
     }
 }
