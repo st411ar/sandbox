@@ -1,6 +1,6 @@
 namespace DependencyInversionPrinciple
 {
-	interface Instrument
+	interface IInstrument
 	{
 		void GetSound();
 	}

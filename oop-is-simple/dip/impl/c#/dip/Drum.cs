@@ -2,7 +2,7 @@ using System;
 
 namespace DependencyInversionPrinciple
 {
-	class Drum : Instrument
+	class Drum : IInstrument
 	{
 		public void GetSound()
 		{

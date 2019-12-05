@@ -2,7 +2,7 @@ namespace DependencyInversionPrinciple
 {
 	class Friend
 	{
-		public static Instrument GiveInstrument()
+		public static IInstrument GiveInstrument()
 		{
 			return new Drum();
 		}
