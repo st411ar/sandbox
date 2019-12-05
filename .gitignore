@@ -1,2 +1,7 @@
+# .net
+bin/
+obj/
+
+# jetbrains
 .idea/
 *.iml
