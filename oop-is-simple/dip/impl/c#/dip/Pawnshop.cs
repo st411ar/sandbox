@@ -6,8 +6,8 @@ namespace DependencyInversionPrinciple
 	{
 		public AInstrument PrepareToSell(string firmName, string instrumentName)
 		{
-			var instrumentClassName = firmName + instrumentName;
-			var instrumentClass = Type.GetType(instrumentClassName);
+			var instrumentClassFullName = $"DependencyInversionPrinciple.{firmName}{instrumentName}";
+			var instrumentClass = Type.GetType(instrumentClassFullName);
 
 			if (instrumentClass == null)
 				return null;
