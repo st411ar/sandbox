@@ -15,6 +15,7 @@ namespace DependencyInversionPrinciple
 
 		private static void DemonstrateInterface()
 		{
+			Console.WriteLine();
 			Console.WriteLine("Interface demonstration start");
 
 			var musicalInstrument = Friend.GiveInstrument();
@@ -22,10 +23,12 @@ namespace DependencyInversionPrinciple
 			musicalInstrument.GetSound();
 
 			Console.WriteLine("Interface demonstration stop");
+			Console.WriteLine();
 		}
 
         private static void DemonstrateAbstract()
 		{
+			Console.WriteLine();
 			Console.WriteLine("Abstract demonstration start");
 
 			var firmName = "Marys";
@@ -38,10 +41,12 @@ namespace DependencyInversionPrinciple
 			preparedToSellInstrument.GetSound();
 
 			Console.WriteLine("Abstract demonstration stop");
+			Console.WriteLine();
 		}
 
 		private static void DemonstrateDependencyInversionByCleanMethod()
 		{
+			Console.WriteLine();
 			Console.WriteLine("Dependency inversion demonstration by clean method start");
 
 			var pawnshop = new Pawnshop();
@@ -53,10 +58,12 @@ namespace DependencyInversionPrinciple
 			preparedToSellInstrument.GetSound();
 
 			Console.WriteLine("Dependency inversion demonstration by clean method stop");
+			Console.WriteLine();
 		}
 
 		private static void DemonstrateDependencyInversionByFactory()
 		{
+			Console.WriteLine();
 			Console.WriteLine("Dependency inversion demonstration by factory start");
 
 			var pawnshop = new Pawnshop();
@@ -66,6 +73,7 @@ namespace DependencyInversionPrinciple
 			preparedToSellInstrument.GetSound();
 
 			Console.WriteLine("Dependency inversion demonstration by factory stop");
+			Console.WriteLine();
 		}
 	}
 }
