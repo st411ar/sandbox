@@ -14,5 +14,12 @@ namespace DependencyInversionPrinciple
 
 			return (AInstrument) Activator.CreateInstance(instrumentClass);
 		}
+
+		public AInstrument PrepareToSell(AInstrument instrument)
+		{
+			instrument.Repair();
+			instrument.Pack();
+			return instrument;
+		}
 	}
 }
