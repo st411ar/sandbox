@@ -17,11 +17,19 @@ namespace DependencyInversionPrinciple
 			return PrepareToSell(instrument);
 		}
 
+		public AInstrument PrepareToSell()
+		{
+			var instrument = InstrumentFactory.GetInstrument();
+
+			return PrepareToSell(instrument);
+		}
+
 		public AInstrument PrepareToSell(AInstrument instrument)
 		{
 			ProcessPreparingToCell(instrument);
 			return instrument;
 		}
+
 
 
 		private void ProcessPreparingToCell(AInstrument instrument)

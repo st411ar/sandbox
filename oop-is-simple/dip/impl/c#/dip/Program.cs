@@ -9,6 +9,7 @@ namespace DependencyInversionPrinciple
 			DemonstrateInterface();
 			DemonstrateAbstract();
 			DemonstrateDependencyInversionByClearMethod();
+			DemonstrateDependencyInversionByFactory();
 		}
 
 
@@ -52,6 +53,19 @@ namespace DependencyInversionPrinciple
 			preparedToSellInstrument.GetSound();
 
 			Console.WriteLine("Dependency inversion demonstration by clear method stop");
+		}
+
+		private static void DemonstrateDependencyInversionByFactory()
+		{
+			Console.WriteLine("Dependency inversion demonstration by factory start");
+
+			var pawnshop = new Pawnshop();
+
+			var preparedToSellInstrument = pawnshop.PrepareToSell();
+
+			preparedToSellInstrument.GetSound();
+
+			Console.WriteLine("Dependency inversion demonstration by factory stop");
 		}
 	}
 }
