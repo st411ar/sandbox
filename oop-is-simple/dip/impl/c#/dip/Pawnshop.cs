@@ -12,14 +12,22 @@ namespace DependencyInversionPrinciple
 			if (instrumentClass == null)
 				return null;
 
-			return (AInstrument) Activator.CreateInstance(instrumentClass);
+			var instrument = (AInstrument) Activator.CreateInstance(instrumentClass);
+
+			return PrepareToSell(instrument);
 		}
 
 		public AInstrument PrepareToSell(AInstrument instrument)
 		{
+			ProcessPreparingToCell(instrument);
+			return instrument;
+		}
+
+
+		private void ProcessPreparingToCell(AInstrument instrument)
+		{
 			instrument.Repair();
 			instrument.Pack();
-			return instrument;
 		}
 	}
 }
