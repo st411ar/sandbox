@@ -10,5 +10,5 @@ Author: [Наталия Ништа](https://dou.ua/users/nataliya-venediktova/)
   (DIP - The Dependency Inversion Principle)
   - project: dip
 - [Принцип подстановки Барбары Лисков](https://dou.ua/lenta/articles/liskov-substitution-principle/)
-  (LSP - The Liskov Substitution Principle)
+  (LSP - The [Liskov](https://ru.wikipedia.org/wiki/%D0%9B%D0%B8%D1%81%D0%BA%D0%BE%D0%B2,_%D0%91%D0%B0%D1%80%D0%B1%D0%B0%D1%80%D0%B0) Substitution Principle)
   - project: lsp
