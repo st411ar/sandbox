@@ -2,7 +2,7 @@ namespace LiskovSubstitutionPrinciple
 {
 	abstract class Boiler
 	{
-		int DesirableTemperature { get; set; }
+		public int DesirableTemperature { get; set; }
 
 		public abstract void InitializeDevice();
 		public abstract int GetWaterTemperature();

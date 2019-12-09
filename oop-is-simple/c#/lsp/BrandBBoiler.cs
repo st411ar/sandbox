@@ -8,8 +8,8 @@ namespace LiskovSubstitutionPrinciple
 
 		public override void InitializeDevice()
 		{
-			Console.WriteLine("Brand B : InitializeDevice()");
-			WaterTemperature = 0;
+			Console.WriteLine("\nBrand B : InitializeDevice()");
+			WaterTemperature = 35;
 		}
 
 		public override int GetWaterTemperature()
