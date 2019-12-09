@@ -28,6 +28,7 @@ namespace LiskovSubstitutionPrinciple
 			boiler.InitializeDevice();
 			while (boiler.GetWaterTemperature() < boiler.GetDesirableTemperature())
 				boiler.HeatWater();
+			Console.WriteLine($"result temperature: {boiler.GetWaterTemperature()}");
 		}
 	}
 }
