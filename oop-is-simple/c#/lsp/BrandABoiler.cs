@@ -2,26 +2,26 @@ using System;
 
 namespace LiskovSubstitutionPrinciple
 {
-	class BrandABoiler : Boiler
+	public class BrandABoiler : Boiler
 	{
-		int WaterTemperature;
+		private int _waterTemperature;
 
 		public override void InitializeDevice()
 		{
 			Console.WriteLine("\nBrand A : InitializeDevice()");
-			WaterTemperature = 33;
+			_waterTemperature = 33;
 		}
 
 		public override int GetWaterTemperature()
 		{
 			Console.WriteLine("Brand A : GetWaterTemperature()");
-			return WaterTemperature;
+			return _waterTemperature;
 		}
 
 		public override void HeatWater()
 		{
 			Console.WriteLine("Brand A : HeatWater()");
-			WaterTemperature++;
+			_waterTemperature++;
 		}
 	}
 }

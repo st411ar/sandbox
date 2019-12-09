@@ -4,15 +4,18 @@ namespace LiskovSubstitutionPrinciple
 {
 	class Program
 	{
-		static void Main(string[] args)
+		public static void Main(string[] args)
 		{
+			const int boilersNumber = 5;
+
+			Console.WriteLine($"Managing {boilersNumber} boilers");
 			ManageBoilers(5);
 		}
 
 
 		private static void ManageBoilers(int boilersNumber)
 		{
-			for (int i = 0; i < boilersNumber; i++)
+			for (var i = 0; i < boilersNumber; i++)
 			{
 				var boiler = BoilerFactory.GetNextBoiler();
 				ManageBoiler(boiler);
@@ -21,9 +24,9 @@ namespace LiskovSubstitutionPrinciple
 
 		private static void ManageBoiler(Boiler boiler)
 		{
-			boiler.DesirableTemperature = 37;
+			boiler.SetDesirableTemperature(37);
 			boiler.InitializeDevice();
-			while (boiler.GetWaterTemperature() < boiler.DesirableTemperature)
+			while (boiler.GetWaterTemperature() < boiler.GetDesirableTemperature())
 				boiler.HeatWater();
 		}
 	}
