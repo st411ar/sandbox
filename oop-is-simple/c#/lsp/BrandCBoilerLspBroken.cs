@@ -2,7 +2,7 @@ using System;
 
 namespace LiskovSubstitutionPrinciple
 {
-	public class BrandCBoiler : Boiler
+	public class BrandCBoilerLspBroken : Boiler
 	{
 		private bool _isInitialized;
 		private int _waterTemperature;

@@ -15,7 +15,7 @@ namespace LiskovSubstitutionPrinciple
 				case 2:
 					return new BrandBBoiler();
 				case 3:
-					return new BrandCBoiler();
+					return new BrandCBoilerLspBroken();
 				default:
 					return null;
 			}
