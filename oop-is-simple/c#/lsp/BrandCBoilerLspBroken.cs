@@ -30,20 +30,20 @@ namespace LiskovSubstitutionPrinciple
 
 		public override void InitializeDevice()
 		{
-			Console.WriteLine("\nBrand C : InitializeDevice()");
+			Console.WriteLine("\nBrand C with broken LSP : InitializeDevice()");
 			_isInitialized = true;
 			_waterTemperature = 31;
 		}
 
 		public override int GetWaterTemperature()
 		{
-			Console.WriteLine("Brand C : GetWaterTemperature()");
+			Console.WriteLine("Brand C with broken LSP : GetWaterTemperature()");
 			return _waterTemperature;
 		}
 
 		public override void HeatWater()
 		{
-			Console.WriteLine("Brand C : HeatWater()");
+			Console.WriteLine("Brand C with broken LSP : HeatWater()");
 			_waterTemperature++;
 		}
 	}
