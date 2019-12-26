@@ -6,7 +6,7 @@ namespace LiskovSubstitutionPrinciple
 	{
 		public static Boiler GetNextBoiler()
 		{
-			var rnd = new Random().Next(1, 3);
+			var rnd = new Random().Next(1, 4);
 
 			switch (rnd)
 			{
@@ -14,6 +14,8 @@ namespace LiskovSubstitutionPrinciple
 					return new BrandABoiler();
 				case 2:
 					return new BrandBBoiler();
+				case 3:
+					return new BrandCBoiler();
 				default:
 					return null;
 			}

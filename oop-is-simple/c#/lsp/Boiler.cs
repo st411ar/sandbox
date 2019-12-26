@@ -1,15 +1,17 @@
+using System;
+
 namespace LiskovSubstitutionPrinciple
 {
 	public abstract class Boiler
 	{
 		private int _desirableTemperature;
 
-		public void SetDesirableTemperature(int temp)
+		public virtual void SetDesirableTemperature(int temp)
 		{
 			_desirableTemperature = temp;
 		}
 
-		public int GetDesirableTemperature()
+		public virtual int GetDesirableTemperature()
 		{
 			return _desirableTemperature;
 		}
