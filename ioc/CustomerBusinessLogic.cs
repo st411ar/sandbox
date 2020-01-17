@@ -2,21 +2,13 @@ namespace InversionOfControl
 {
 	public class CustomerBusinessLogic
 	{
-		IDataAccess _dataAccess;
+		public IDataAccess DataAccess { get; set; }
 
-		public CustomerBusinessLogic()
-		{
-			_dataAccess = new DataAccess();
-		}
-
-		public CustomerBusinessLogic(IDataAccess dataAccess)
-		{
-			_dataAccess = dataAccess;
-		}
+		public CustomerBusinessLogic() {}
 
 		public string GetCustomerName(int id)
 		{
-			return _dataAccess.GetCustomerName(id);
+			return DataAccess.GetCustomerName(id);
 		}
 	}
 }

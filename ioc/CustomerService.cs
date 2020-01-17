@@ -6,7 +6,8 @@ namespace InversionOfControl
 
 		public CustomerService()
 		{
-			_logic = new CustomerBusinessLogic(new DataAccess());
+			_logic = new CustomerBusinessLogic();
+			_logic.DataAccess = new DataAccess();
 		}
 
 		public string GetCustomerName(int id)
