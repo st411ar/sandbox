@@ -9,6 +9,8 @@
   (IoC)
 - [Dependency Inversion Principle](https://www.tutorialsteacher.com/ioc/dependency-inversion-principle)
   (DIP)
+- [Dependency Injection](https://www.tutorialsteacher.com/ioc/dependency-injection)
+  (DI)
 
 
 ## oop-is-simple
