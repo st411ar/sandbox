@@ -2,11 +2,13 @@
 
 
 ## ioc
+
 [Inversion of Control Tutorials](https://www.tutorialsteacher.com/ioc)
 - [Introduction](https://www.tutorialsteacher.com/ioc/introduction)
 - [Inversion of Control](https://www.tutorialsteacher.com/ioc/inversion-of-control)
   (IoC)
-  - project: ioc
+- [Dependency Inversion Principle](https://www.tutorialsteacher.com/ioc/dependency-inversion-principle)
+  (DIP)
 
 
 ## oop-is-simple
