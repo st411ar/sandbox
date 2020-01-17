@@ -2,14 +2,14 @@
 
 namespace InversionOfControl
 {
-    class Program
-    {
-        static void Main(string[] args)
-        {
-        	CustomerBusinessLogic logic = new CustomerBusinessLogic();
-        	string name = logic.GetCustomerName(0);
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			CustomerService service = new CustomerService();
+			string name = service.GetCustomerName(0);
 
-        	Console.WriteLine(name);
-        }
-    }
+			Console.WriteLine(name);
+		}
+	}
 }

@@ -6,7 +6,12 @@ namespace InversionOfControl
 
 		public CustomerBusinessLogic()
 		{
-			_dataAccess = DataAccessFactory.GetDataAccessObj();
+			_dataAccess = new DataAccess();
+		}
+
+		public CustomerBusinessLogic(IDataAccess dataAccess)
+		{
+			_dataAccess = dataAccess;
 		}
 
 		public string GetCustomerName(int id)
