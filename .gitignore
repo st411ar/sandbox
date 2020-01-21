@@ -2,6 +2,9 @@
 bin/
 obj/
 
-# jetbrains
+# jetbrains rider
 .idea/
 *.iml
+
+# microsoft visual studio
+.vs/
