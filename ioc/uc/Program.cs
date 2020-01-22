@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace uc
+namespace UnityContainerDemo
 {
     class Program
     {

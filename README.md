@@ -17,6 +17,10 @@
 - [IoC Container](https://www.tutorialsteacher.com/ioc/ioc-container)
 
 ### project uc
+```
+dotnet new console -n UnityContainerDemo -o uc
+dotnet add uc package Unity -v 4.0.1
+```
 - [Unity Container](https://www.tutorialsteacher.com/ioc/unity-container)
 - [Install Unity Container](https://www.tutorialsteacher.com/ioc/install-unity-container)
 
