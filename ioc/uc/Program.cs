@@ -6,7 +6,9 @@ namespace UnityContainerDemo
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Driver driver = new Driver(new BMW());
+
+            driver.RunCar();
         }
     }
 }
