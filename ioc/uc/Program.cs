@@ -12,7 +12,7 @@ namespace UnityContainerDemo
 
 			container.RegisterType<ICar, BMW>();
 
-			Driver driver = new Driver(new BMW());
+			Driver driver = container.Resolve<Driver>();
 
 			driver.RunCar();
 		}
