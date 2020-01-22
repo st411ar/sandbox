@@ -8,6 +8,12 @@ namespace UnityContainerDemo
 	{
 		static void Main(string[] args)
 		{
+			RegisterNamedTypes();
+		}
+
+
+		private static void RegisterNamedTypes()
+		{
 			IUnityContainer container = new UnityContainer();
 
 
