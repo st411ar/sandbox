@@ -9,13 +9,22 @@ namespace UnityContainerDemo
 		static void Main(string[] args)
 		{
 			IUnityContainer container = new UnityContainer();
+
+
 			container.RegisterType<ICar, BMW>();
-			container.RegisterType<ICar, Audi>();
+
+			container.RegisterType<ICar, Audi>("LuxuryCar");
+
+			container.RegisterType<Driver>(
+				"LuxuryCarDriver",
+				new InjectionConstructor(container.Resolve<ICar>("LuxuryCar"))
+			);
+
 
 			Driver driver = container.Resolve<Driver>();
 			driver.RunCar();
 
-			Driver driver2 = container.Resolve<Driver>();
+			Driver driver2 = container.Resolve<Driver>("LuxuryCarDriver");
 			driver2.RunCar();
 		}
 	}
