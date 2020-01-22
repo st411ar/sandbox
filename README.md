@@ -23,6 +23,7 @@ dotnet add uc package Unity -v 4.0.1
 ```
 - [Unity Container](https://www.tutorialsteacher.com/ioc/unity-container)
 - [Install Unity Container](https://www.tutorialsteacher.com/ioc/install-unity-container)
+- [Register and Resolve](https://www.tutorialsteacher.com/ioc/register-and-resolve-in-unity-container)
 
 
 ## oop-is-simple
