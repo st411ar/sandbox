@@ -16,6 +16,8 @@ namespace UnityContainerDemo
 
 		private static void RegisterNamedTypes()
 		{
+			Console.WriteLine("\nRegisterNamedTypes() start");
+
 			IUnityContainer container = new UnityContainer();
 
 
@@ -39,10 +41,14 @@ namespace UnityContainerDemo
 
 			Driver driver2 = container.Resolve<Driver>("LuxuryCarDriver");
 			driver2.RunCar();
+
+			Console.WriteLine("RegisterNamedTypes() stop\n");
 		}
 
 		private static void RegisterInstance()
 		{
+			Console.WriteLine("\nRegisterInstance() start");
+
 			IUnityContainer container = new UnityContainer();
 
 
@@ -58,10 +64,14 @@ namespace UnityContainerDemo
 
 			Driver driver2 = container.Resolve<Driver>();
 			driver2.RunCar();
+
+			Console.WriteLine("RegisterInstance() stop\n");
 		}
 
 		private static void MultipleParametersConstructorInjection()
 		{
+			Console.WriteLine("\nMultipleParametersConstructorInjection() start");
+
 			var container = new UnityContainer();
 
 			container.RegisterType<ICar, Audi>();
@@ -69,6 +79,8 @@ namespace UnityContainerDemo
 
 			var driver = container.Resolve<Driver>();
 			driver.RunCar();
+
+			Console.WriteLine("MultipleParametersConstructorInjection() stop\n");
 		}
 	}
 }
