@@ -13,6 +13,7 @@ namespace UnityContainerDemo
 			RegisterInstance();
 			MultipleParametersConstructorInjection();
 			MultipleConstructorsInjection();
+			PrimitiveTypeConstructorInjection();
 		}
 
 
@@ -97,6 +98,22 @@ namespace UnityContainerDemo
 			driver.RunCar();
 
 			Console.WriteLine("MultipleConstructorsInjection() stop\n");
+		}
+
+		private static void PrimitiveTypeConstructorInjection()
+		{
+			Console.WriteLine("\nPrimitiveTypeConstructorInjection() start");
+
+			var container = new UnityContainer();
+
+			container.RegisterType<ICar, Audi>();
+//			container.RegisterType<NamedDriver2>(new InjectionConstructor(new object[] { new Ford(), "Steve" }));
+			container.RegisterType<NamedDriver2>(new InjectionConstructor(new object[] { container.Resolve<ICar>(), "Steve" }));
+
+			var driver = container.Resolve<NamedDriver2>();
+			driver.RunCar();
+
+			Console.WriteLine("PrimitiveTypeConstructorInjection() stop\n");
 		}
 
 
