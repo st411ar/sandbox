@@ -5,24 +5,26 @@ using Microsoft.Practices.Unity;
 
 namespace UnityContainerDemo
 {
-	public class Driver
+	public class NamedDriver
 	{
 		private ICar _car = null;
-		private ICarKey _key = null;
 
-		public Driver(ICar car, ICarKey key)
+
+		public NamedDriver(string name) {}
+
+		[InjectionConstructor]
+		public NamedDriver(ICar car)
 		{
 			_car = car;
-			_key = key;
 		}
+
 
 		public void RunCar()
 		{
 			string carName = _car.GetType().Name;
-			string keyName = _key.GetType().Name;
 			int mileage = _car.Run();
 
-			Console.WriteLine($"Running {carName} with {keyName} - {mileage} miles");
+			Console.WriteLine($"Running {carName} - {mileage} miles");
 		}
 	}
 }

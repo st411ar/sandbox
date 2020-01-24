@@ -12,6 +12,7 @@ namespace UnityContainerDemo
 			RegisterNamedTypes();
 			RegisterInstance();
 			MultipleParametersConstructorInjection();
+			MultipleConstructorsInjection();
 		}
 
 
@@ -82,6 +83,20 @@ namespace UnityContainerDemo
 			driver.RunCar();
 
 			Console.WriteLine("MultipleParametersConstructorInjection() stop\n");
+		}
+
+		private static void MultipleConstructorsInjection()
+		{
+			Console.WriteLine("\nMultipleConstructorsInjection() start");
+
+			var container = new UnityContainer();
+
+			container.RegisterType<ICar, Audi>();
+
+			var driver = container.Resolve<NamedDriver>();
+			driver.RunCar();
+
+			Console.WriteLine("MultipleConstructorsInjection() stop\n");
 		}
 	}
 }
