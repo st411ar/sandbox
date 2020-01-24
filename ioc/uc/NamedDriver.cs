@@ -12,7 +12,7 @@ namespace UnityContainerDemo
 
 		public NamedDriver(string name) {}
 
-		[InjectionConstructor]
+//		[InjectionConstructor]
 		public NamedDriver(ICar car)
 		{
 			_car = car;

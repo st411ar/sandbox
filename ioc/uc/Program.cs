@@ -93,10 +93,26 @@ namespace UnityContainerDemo
 
 			container.RegisterType<ICar, Audi>();
 
-			var driver = container.Resolve<NamedDriver>();
+			var driver = ResolveNamedDriverSafely(container);
 			driver.RunCar();
 
 			Console.WriteLine("MultipleConstructorsInjection() stop\n");
+		}
+
+
+		private static NamedDriver ResolveNamedDriverSafely(UnityContainer container)
+		{
+			try
+			{
+				return container.Resolve<NamedDriver>();
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine("Default resolving has been failed. Trying to resolve at run time ...");
+//				container.RegisterType<NamedDriver>(new InjectionConstructor(new Ford()));
+				container.RegisterType<NamedDriver>(new InjectionConstructor(container.Resolve<ICar>()));
+				return container.Resolve<NamedDriver>();
+			}
 		}
 	}
 }
