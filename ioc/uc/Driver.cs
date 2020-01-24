@@ -1,5 +1,8 @@
 using System;
 
+using Microsoft.Practices.Unity;
+
+
 namespace UnityContainerDemo
 {
 	public class Driver
@@ -7,6 +10,9 @@ namespace UnityContainerDemo
 		private ICar _car = null;
 		private ICarKey _key = null;
 
+		public Driver(string name) {}
+
+		[InjectionConstructor]
 		public Driver(ICar car, ICarKey key)
 		{
 			_car = car;
