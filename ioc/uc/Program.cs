@@ -21,6 +21,7 @@ namespace UnityContainerDemo
 			RunTimePropertyInjectionDemo();
 
 			MethodInjectionDemo();
+			RunTimeMethodInjectionDemo();
 		}
 
 
@@ -178,6 +179,21 @@ namespace UnityContainerDemo
 			driver.RunCar();
 
 			Console.WriteLine("MethodInjectionDemo() stop\n");
+		}
+
+		private static void RunTimeMethodInjectionDemo()
+		{
+			Console.WriteLine("\nRunTimeMethodInjectionDemo() start");
+
+			var container = new UnityContainer();
+
+//			container.RegisterType<DriverWithMethodAtRunTime>(new InjectionMethod("UseCar", new Audi()));
+			container.RegisterType<DriverWithMethodAtRunTime>(new InjectionMethod("UseCar", new object[] { new Audi() }));
+
+			var driver = container.Resolve<DriverWithMethodAtRunTime>();
+			driver.RunCar();
+
+			Console.WriteLine("RunTimeMethodInjectionDemo() stop\n");
 		}
 
 
