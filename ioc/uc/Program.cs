@@ -26,6 +26,7 @@ namespace UnityContainerDemo
 			OverrideParameterDemo();
 			OverrideMultipleParametersDemo();
 			OverridePropertyDemo();
+			OverrideDependencyDemo();
 		}
 
 
@@ -259,6 +260,30 @@ namespace UnityContainerDemo
 			driver2.RunCar();
 
 			Console.WriteLine("OverridePropertyDemo() stop\n");
+		}
+
+		private static void OverrideDependencyDemo()
+		{
+			Console.WriteLine("\nOverrideDependencyDemo() start");
+
+			var container = new UnityContainer();
+
+			container.RegisterType<ICar, BMW>();
+			container.RegisterType<ICarKey, BMWKey>();
+
+			var driver1 = container.Resolve<Driver>();
+			driver1.RunCar();
+
+			var driver2 = container.Resolve<Driver>(new DependencyOverride<ICar>(new Audi()));
+			driver2.RunCar();
+
+			var driver3 = container.Resolve<DriverWithMethod>();
+			driver3.RunCar();
+
+			var driver4 = container.Resolve<DriverWithMethod>(new DependencyOverride<ICar>(new Audi()));
+			driver4.RunCar();
+
+			Console.WriteLine("OverrideDependencyDemo() stop\n");
 		}
 
 
