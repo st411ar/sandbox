@@ -11,12 +11,16 @@ namespace UnityContainerDemo
 		{
 			RegisterNamedTypes();
 			RegisterInstance();
+
 			MultipleParametersConstructorInjection();
 			MultipleConstructorsInjection();
 			PrimitiveTypeConstructorInjection();
+
 			PropertyInjectionDemo();
 			NamedPropertyInjectionDemo();
 			RunTimePropertyInjectionDemo();
+
+			MethodInjectionDemo();
 		}
 
 
@@ -160,6 +164,20 @@ namespace UnityContainerDemo
 			driver.RunCar();
 
 			Console.WriteLine("RunTimePropertyInjectionDemo() stop\n");
+		}
+
+		private static void MethodInjectionDemo()
+		{
+			Console.WriteLine("\nMethodInjectionDemo() start");
+
+			var container = new UnityContainer();
+
+			container.RegisterType<ICar, BMW>();
+
+			var driver = container.Resolve<DriverWithMethod>();
+			driver.RunCar();
+
+			Console.WriteLine("MethodInjectionDemo() stop\n");
 		}
 
 
