@@ -28,6 +28,7 @@ dotnet add uc package Unity -v 4.0.1
 - [Property Injection](https://www.tutorialsteacher.com/ioc/property-injection-using-unity-container)
 - [Method Injection](https://www.tutorialsteacher.com/ioc/Method-injection-using-unity-container)
 - [Overrides](https://www.tutorialsteacher.com/ioc/overrides-in-unity)
+- [Lifetime Manager](https://www.tutorialsteacher.com/ioc/lifetime-manager-in-unity-container)
 
 
 ## oop-is-simple
