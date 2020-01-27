@@ -16,6 +16,7 @@ namespace UnityContainerDemo
 			PrimitiveTypeConstructorInjection();
 			PropertyInjectionDemo();
 			NamedPropertyInjectionDemo();
+			RunTimePropertyInjectionDemo();
 		}
 
 
@@ -145,6 +146,20 @@ namespace UnityContainerDemo
 			driver.RunCar();
 
 			Console.WriteLine("NamedPropertyInjectionDemo() stop\n");
+		}
+
+		private static void RunTimePropertyInjectionDemo()
+		{
+			Console.WriteLine("\nRunTimePropertyInjectionDemo() start");
+
+			var container = new UnityContainer();
+
+			container.RegisterType<NamedDriverWithProperty>(new InjectionProperty("Car", new BMW()));
+
+			var driver = container.Resolve<NamedDriverWithProperty>();
+			driver.RunCar();
+
+			Console.WriteLine("RunTimePropertyInjectionDemo() stop\n");
 		}
 
 
