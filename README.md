@@ -25,6 +25,7 @@ dotnet add uc package Unity -v 4.0.1
 - [Install Unity Container](https://www.tutorialsteacher.com/ioc/install-unity-container)
 - [Register and Resolve](https://www.tutorialsteacher.com/ioc/register-and-resolve-in-unity-container)
 - [Constructor Injection](https://www.tutorialsteacher.com/ioc/constructor-injection-using-unity-container)
+- [Property Injection](https://www.tutorialsteacher.com/ioc/property-injection-using-unity-container)
 
 
 ## oop-is-simple

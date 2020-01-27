@@ -14,6 +14,7 @@ namespace UnityContainerDemo
 			MultipleParametersConstructorInjection();
 			MultipleConstructorsInjection();
 			PrimitiveTypeConstructorInjection();
+			PropertyInjectionDemo();
 		}
 
 
@@ -114,6 +115,20 @@ namespace UnityContainerDemo
 			driver.RunCar();
 
 			Console.WriteLine("PrimitiveTypeConstructorInjection() stop\n");
+		}
+
+		private static void PropertyInjectionDemo()
+		{
+			Console.WriteLine("\nPropertyInjectionDemo() start");
+
+			var container = new UnityContainer();
+
+			container.RegisterType<ICar, BMW>();
+
+			var driver = container.Resolve<DriverWithProperty>();
+			driver.RunCar();
+
+			Console.WriteLine("PropertyInjectionDemo() stop\n");
 		}
 
 
