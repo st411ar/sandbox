@@ -22,6 +22,8 @@ namespace UnityContainerDemo
 
 			MethodInjectionDemo();
 			RunTimeMethodInjectionDemo();
+
+			OverrideParameterDemo();
 		}
 
 
@@ -194,6 +196,24 @@ namespace UnityContainerDemo
 			driver.RunCar();
 
 			Console.WriteLine("RunTimeMethodInjectionDemo() stop\n");
+		}
+
+		private static void OverrideParameterDemo()
+		{
+			Console.WriteLine("\nOverrideParameterDemo() start");
+
+			var container = new UnityContainer();
+
+			container.RegisterType<ICar, BMW>();
+			container.RegisterType<ICarKey, BMWKey>();
+
+			var driver1 = container.Resolve<Driver>();
+			driver1.RunCar();
+
+			var driver2 = container.Resolve<Driver>(new ParameterOverride("car", new Ford()));
+			driver2.RunCar();
+
+			Console.WriteLine("OverrideParameterDemo() stop\n");
 		}
 
 
