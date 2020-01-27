@@ -219,7 +219,7 @@ namespace UnityContainerDemo
 
 		private static void OverrideMultipleParametersDemo()
 		{
-			Console.WriteLine("\nOverrideParameterDemo() start");
+			Console.WriteLine("\nOverrideMultipleParametersDemo() start");
 
 			var container = new UnityContainer();
 
@@ -237,7 +237,7 @@ namespace UnityContainerDemo
 			);
 			driver2.RunCar();
 
-			Console.WriteLine("OverrideParameterDemo() stop\n");
+			Console.WriteLine("OverrideMultipleParametersDemo() stop\n");
 		}
 
 
