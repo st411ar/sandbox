@@ -29,6 +29,7 @@ namespace UnityContainerDemo
 			OverrideDependencyDemo();
 
 			TransientLifetimeManagerDemo();
+			ContainerControlledLifetimeManagerDemo();
 		}
 
 
@@ -306,6 +307,24 @@ namespace UnityContainerDemo
 			driver2.RunCar();
 
 			Console.WriteLine("TransientLifetimeManagerDemo() stop\n");
+		}
+
+		private static void ContainerControlledLifetimeManagerDemo()
+		{
+			Console.WriteLine("\nContainerControlledLifetimeManagerDemo() start");
+
+			var container = new UnityContainer();
+
+			container.RegisterType<ICar, BMW>(new ContainerControlledLifetimeManager());
+			container.RegisterType<ICarKey, BMWKey>(new ContainerControlledLifetimeManager());
+
+			var driver1 = container.Resolve<Driver>();
+			driver1.RunCar();
+
+			var driver2 = container.Resolve<Driver>();
+			driver2.RunCar();
+
+			Console.WriteLine("ContainerControlledLifetimeManagerDemo() stop\n");
 		}
 
 
