@@ -27,6 +27,8 @@ namespace UnityContainerDemo
 			OverrideMultipleParametersDemo();
 			OverridePropertyDemo();
 			OverrideDependencyDemo();
+
+			TransientLifetimeManagerDemo();
 		}
 
 
@@ -284,6 +286,26 @@ namespace UnityContainerDemo
 			driver4.RunCar();
 
 			Console.WriteLine("OverrideDependencyDemo() stop\n");
+		}
+
+		private static void TransientLifetimeManagerDemo()
+		{
+			Console.WriteLine("\nTransientLifetimeManagerDemo() start");
+
+			var container = new UnityContainer();
+
+//			container.RegisterType<ICar, BMW>();
+			container.RegisterType<ICar, BMW>(new TransientLifetimeManager());
+//			container.RegisterType<ICarKey, BMWKey>();
+			container.RegisterType<ICarKey, BMWKey>(new TransientLifetimeManager());
+
+			var driver1 = container.Resolve<Driver>();
+			driver1.RunCar();
+
+			var driver2 = container.Resolve<Driver>();
+			driver2.RunCar();
+
+			Console.WriteLine("TransientLifetimeManagerDemo() stop\n");
 		}
 
 
