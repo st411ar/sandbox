@@ -30,6 +30,7 @@ namespace UnityContainerDemo
 
 			TransientLifetimeManagerDemo();
 			ContainerControlledLifetimeManagerDemo();
+			HierarchicalLifetimeManagerDemo();
 		}
 
 
@@ -325,6 +326,32 @@ namespace UnityContainerDemo
 			driver2.RunCar();
 
 			Console.WriteLine("ContainerControlledLifetimeManagerDemo() stop\n");
+		}
+
+		private static void HierarchicalLifetimeManagerDemo()
+		{
+			Console.WriteLine("\nHierarchicalLifetimeManagerDemo() start");
+
+			var container = new UnityContainer();
+
+			container.RegisterType<ICar, BMW>(new HierarchicalLifetimeManager());
+			container.RegisterType<ICarKey, BMWKey>(new HierarchicalLifetimeManager());
+
+			var childContainer = container.CreateChildContainer();
+
+			var driver1 = container.Resolve<Driver>();
+			driver1.RunCar();
+
+			var driver2 = container.Resolve<Driver>();
+			driver2.RunCar();
+
+			var driver3 = childContainer.Resolve<Driver>();
+			driver3.RunCar();
+
+			var driver4 = childContainer.Resolve<Driver>();
+			driver4.RunCar();
+
+			Console.WriteLine("HierarchicalLifetimeManagerDemo() stop\n");
 		}
 
 
